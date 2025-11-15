@@ -1,0 +1,4 @@
+# Script GLPI + Nginx
+
+Script d'installation/deploiement de GLPI pour Debian (Nginx, MariaDB, PHP-FPM).
+Usage: exécuter en root sur Debian 11/12.

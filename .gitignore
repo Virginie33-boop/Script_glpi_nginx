@@ -1,0 +1,11 @@
+# Editor / OS
+.vscode/
+Thumbs.db
+.DS_Store
+
+# OneDrive sync metadata
+~$*
+
+# Logs, temp
+*.log
+*.tmp
