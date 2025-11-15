@@ -65,7 +65,7 @@ if ! command -v lsb_release &> /dev/null; then
 fi
 
 # Versions de Debian acceptables
-DEBIAN_VERSIONS=("11" "12")
+DEBIAN_VERSIONS=("11" "12" "13")
 
 # Récupération du nom de la distribution
 DISTRO=$(lsb_release -is)
@@ -119,7 +119,9 @@ done
  
 function php_version()
 {
-if [ "$VERSION" == "12" ]; then
+if [ "$VERSION" == "13" ]; then
+        PHP_VERSION="8.3"  # Ajustement pour Debian 13
+elif [ "$VERSION" == "12" ]; then
         PHP_VERSION="8.2"       
 elif [ "$VERSION" == "11" ]; then
         PHP_VERSION="7.4"
