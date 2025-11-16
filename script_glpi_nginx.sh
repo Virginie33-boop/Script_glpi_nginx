@@ -33,7 +33,7 @@ function welcome_message()
 {
 info "=======> Script d'installation de GLPI <======="
 echo "Ce script permet d'installer et de configurer Nginx, GLPI et MySQL sur votre machine."
-warn "Ce script est prévu pour être executé sur une distribution Debian 11/12."
+warn "Ce script est prévu pour être executé sur une distribution Debian 11/12/13."
 echo
 read -p "Souhaitez-vous procéder à l'installation? [oui/non] : " confirm
 echo
@@ -167,9 +167,13 @@ php-cli \
 php-zip \
 wget \
 unzip
+
+# Essayer d'installer php-imap (optionnel, peut ne pas être disponible sur Debian 13)
+apt install -y php-imap 2>/dev/null || warn "php-imap non disponible (optionnel)"
+
 systemctl enable mariadb
 systemctl enable nginx
-check_error "Impossible d'installer les dépendances"
+check_error "Impossible d'installer les dépendances principales"
 }
  
 function mariadb_configuration()
