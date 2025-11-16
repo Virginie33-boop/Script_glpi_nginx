@@ -152,7 +152,6 @@ php-gd \
 php-intl \
 php-pear \
 php-imagick \
-php-imap \
 php-memcache \
 php-pspell \
 php-tidy \
@@ -167,9 +166,6 @@ php-cli \
 php-zip \
 wget \
 unzip
-
-# Essayer d'installer php-imap (optionnel, peut ne pas être disponible sur Debian 13)
-apt install -y php-imap 2>/dev/null || warn "php-imap non disponible (optionnel)"
 
 systemctl enable mariadb
 systemctl enable nginx
